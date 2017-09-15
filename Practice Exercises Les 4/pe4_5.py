@@ -1,0 +1,1 @@
+def pe4_5 (kwadraten_som)
