@@ -1,24 +1,25 @@
 def standaardprijs(afstandKM):
     if afstandKM > 50:
-        prijs = round(15 + 0.60*afstandKM,2)
+        prijs = round(15 + 0.60*afstandKM,2)                                            #Als de afstand groter is dan 50 km zal je een startprijs hebben van 15 euro en 60 cent per kilometer betalen.
     else:
-        prijs = round(0.80*afstandKM,2)
+        prijs = round(0.80*afstandKM,2)                                                 #Als de afstand kleiner is dan 50 km zal de persoon 80 cent per kilometer betalen.
     if afstandKM < 0:
-        prijs = int(0)
+        prijs = int(0)                                                                  #Als de afstand kleiner dan 0 is, zal de persoon niks hoeven te betalen.
     return prijs
 
 def ritprijs(leeftijd, weekendrit, afstandKM):
     if weekendrit == True:
         if leeftijd <12 or leeftijd >=65:
-            totaleprijs = round((standaardprijs(afstandKM)/100)*65, 2)
+            totaleprijs = round((standaardprijs(afstandKM)/100)*65, 2)                  #Als de persoon jonger is dan 12 en 65 of ouder is zal deze persoon 35% korting krijgen hier.
         else:
-            totaleprijs = round((standaardprijs(afstandKM) / 100) * 60, 2)
+            totaleprijs = round((standaardprijs(afstandKM) / 100) * 60, 2)              #Als de persoon tussen 12 en 65 is zal deze persoon hier 40% korting krijgen.
     else:
-        if leeftijd <12 or leeftijd >=65:
+        if leeftijd <12 or leeftijd >=65:                                               #Als de persoon jonger is dan 12 en 65 of ouder is zal deze persoon 30% korting krijgen hier.
             totaleprijs = round((standaardprijs(afstandKM)/100)*70, 2)
         else:
-            totaleprijs = standaardprijs(afstandKM)
+            totaleprijs = standaardprijs(afstandKM)                                     #Als de persoon tussen 12 en 65 is zal deze persoon de volle prijs moeten betalen.
     return totaleprijs
+
 
 resultaat1 = ritprijs(11, True, 40)
 resultaat2 = ritprijs(12, True, 40)
