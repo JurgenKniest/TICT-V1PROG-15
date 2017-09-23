@@ -19,6 +19,16 @@ def ritprijs(leeftijd, weekendrit, afstandKM):
             totaleprijs = round((prijs1/100)*70, 2)
         else:
             totaleprijs = (prijs1)                                                           #Als de persoon tussen 12 en 65 is zal deze persoon de volle prijs moeten betalen.
+    if weekendrit == True:
+        if leeftijd <12 or leeftijd >=65:
+            totaleprijs = round((standaardprijs(afstandKM)/100)*65, 2)                  #Als de persoon jonger is dan 12 en 65 of ouder is zal deze persoon 35% korting krijgen hier.
+        else:
+            totaleprijs = round((standaardprijs(afstandKM) / 100) * 60, 2)              #Als de persoon tussen 12 en 65 is zal deze persoon hier 40% korting krijgen.
+    else:
+        if leeftijd <12 or leeftijd >=65:                                               #Als de persoon jonger is dan 12 en 65 of ouder is zal deze persoon 30% korting krijgen hier.
+            totaleprijs = round((standaardprijs(afstandKM)/100)*70, 2)
+        else:
+            totaleprijs = standaardprijs(afstandKM)                                     #Als de persoon tussen 12 en 65 is zal deze persoon de volle prijs moeten betalen.
     return totaleprijs
 
 
