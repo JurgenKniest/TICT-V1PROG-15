@@ -1,14 +1,17 @@
 studentencijfers = [ [95, 92, 86],[66, 75, 54],[89, 72, 100],[34, 0, 0] ]
-lijst1 = []
+
 
 def gemiddelde_per_student(studentencijfers):
+    antw = []
     for cijferlijst in studentencijfers:
-        antw = sum(cijferlijst)/len(cijferlijst)
+        gemiddelde = (sum(cijferlijst)/len(cijferlijst))
+        antw.append(gemiddelde)
     return antw
 
-#def gemiddelde_van_alle_studenten(studentencijfers):
+def gemiddelde_van_alle_studenten(studentencijfers):
+    avgstudent = gemiddelde_per_student(studentencijfers)
+    antw = int(sum(avgstudent)/len(avgstudent))
+    return antw
 
-# return antw
 print(gemiddelde_per_student(studentencijfers))
-#print(gemiddelde_van_alle_studenten(studentencijfers))
-
+print(gemiddelde_van_alle_studenten(studentencijfers))
