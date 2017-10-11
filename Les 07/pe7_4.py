@@ -14,7 +14,7 @@ def ticker(filename):
 def tickername(bedrijf):
     ticker('ticker_symbols.txt')
     print(dictionary[bedrijf])
-    print(dictionary[bedrijf[])
+    print(bedrijf)
 
 bedrijf = input('Bedrijf of afkorting: ')
 tickername(bedrijf)
